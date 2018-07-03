@@ -13,6 +13,8 @@ class ContactDetailController: UITableViewController {
     var contact: Contact?
 
     // Outlets
+    @IBOutlet weak var profileView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -24,6 +26,7 @@ class ContactDetailController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureView()
 
         
     }
@@ -35,7 +38,8 @@ class ContactDetailController: UITableViewController {
     
     func configureView() {
         guard let contact = contact else {return}
-        
+        profileView.image = contact.image
+        nameLabel.text = "\(contact.firstName) \(contact.lastName)"
         phoneNumberLabel.text = contact.phone
         emailLabel.text = contact.email
         streetLabel.text = contact.street
