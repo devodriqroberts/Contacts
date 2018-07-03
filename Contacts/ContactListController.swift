@@ -63,15 +63,25 @@ class ContactListController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath)
+        guard let contactCell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as? ContactCell else {fatalError()}
         
         let contact = sections[indexPath.section][indexPath.row]
+        contactCell.profileImageView.image = contact.image
+        contactCell.nameLable.text = "\(contact.firstName) \(contact.lastName)"
+        contactCell.cityLabel.text = contact.city
         
-        cell.textLabel?.text = contact.firstName
-        cell.imageView?.image = contact.image
-        cell.detailTextLabel?.text = contact.lastName
+        if contact.isFavorite {
+            contactCell.favoriteIcon.image = #imageLiteral(resourceName: "Star")
+        }
         
-        return cell
+        
+        return contactCell
+    }
+    
+    //Mark: - TableV iew Delegate
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     //MARK: - Navigation
