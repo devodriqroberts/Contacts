@@ -17,6 +17,7 @@
 		253C72F320E9C44F00BC1DD8 /* ContactListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253C72F220E9C44F00BC1DD8 /* ContactListController.swift */; };
 		253C72F520E9C4A800BC1DD8 /* ContactDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253C72F420E9C4A800BC1DD8 /* ContactDetailController.swift */; };
 		253C72F720EB185600BC1DD8 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253C72F620EB185600BC1DD8 /* ContactCell.swift */; };
+		253C72F920EC444B00BC1DD8 /* ContactsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253C72F820EC444B00BC1DD8 /* ContactsDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		253C72F220E9C44F00BC1DD8 /* ContactListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListController.swift; sourceTree = "<group>"; };
 		253C72F420E9C4A800BC1DD8 /* ContactDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailController.swift; sourceTree = "<group>"; };
 		253C72F620EB185600BC1DD8 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		253C72F820EC444B00BC1DD8 /* ContactsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				253C72F220E9C44F00BC1DD8 /* ContactListController.swift */,
+				253C72F820EC444B00BC1DD8 /* ContactsDataSource.swift */,
 				253C72F420E9C4A800BC1DD8 /* ContactDetailController.swift */,
 				253C72D820E9BD8D00BC1DD8 /* AppDelegate.swift */,
 				253C72DE20E9BD8D00BC1DD8 /* Main.storyboard */,
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				253C72F920EC444B00BC1DD8 /* ContactsDataSource.swift in Sources */,
 				253C72F720EB185600BC1DD8 /* ContactCell.swift in Sources */,
 				253C72F120E9C39400BC1DD8 /* Contact.swift in Sources */,
 				253C72F520E9C4A800BC1DD8 /* ContactDetailController.swift in Sources */,

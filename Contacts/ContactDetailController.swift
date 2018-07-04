@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol ContactDetailControllerDelegate: class {
+    func didMarkAsFavoriteContact(_ contact: Contact)
+    func didUnfavoriteContact(_ contact: Contact)
+}
+
 class ContactDetailController: UITableViewController {
     
     var contact: Contact?
@@ -22,6 +27,10 @@ class ContactDetailController: UITableViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var zipCodeLabel: UILabel!
+    @IBOutlet weak var markAsFavoriteButton: UIButton!
+    @IBOutlet weak var markAsUnfavoriteButton: UIButton!
+    
+    weak var delegate: ContactDetailControllerDelegate?
     
     
     override func viewDidLoad() {
@@ -47,6 +56,23 @@ class ContactDetailController: UITableViewController {
         stateLabel.text = contact.state
         zipCodeLabel.text = contact.zip
     }
+    @IBAction func markAsFavorite(_ sender: Any) {
+            guard let contact = contact else {return}
+            delegate?.didMarkAsFavoriteContact(contact)
+        markAsFavoriteButton.isHidden = true
+        markAsUnfavoriteButton.isHidden = false
+            }
+    
+    @IBAction func unfavoriteContact(_ sender: Any) {
+        guard let contact = contact else {return}
+        delegate?.didUnfavoriteContact(contact)
+        markAsUnfavoriteButton.isHidden = true
+        markAsFavoriteButton.isHidden = false
+        
+        
+
+    }
+    
 }
 
 

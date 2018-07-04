@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -75,7 +75,7 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="pJo-eJ-ZPL">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pJo-eJ-ZPL">
                                             <rect key="frame" x="345" y="29" width="22" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="22" id="aSs-rE-ELm"/>
@@ -285,6 +285,42 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="I6i-in-hhK">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RlF-tM-EM9">
+                                        <rect key="frame" x="0.0" y="448" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RlF-tM-EM9" id="q5p-vJ-Aup">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="603-cU-8JS">
+                                                    <rect key="frame" x="8" y="6" width="114" height="30"/>
+                                                    <state key="normal" title="Mark As Favorite"/>
+                                                    <connections>
+                                                        <action selector="markAsFavorite:" destination="AQB-T9-0P0" eventType="touchUpInside" id="RYS-YV-Ot4"/>
+                                                    </connections>
+                                                </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSe-Ux-5Yl">
+                                                    <rect key="frame" x="296" y="6" width="71" height="30"/>
+                                                    <state key="normal" title="Unfavorite">
+                                                        <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="unfavoriteContact:" destination="AQB-T9-0P0" eventType="touchUpInside" id="0nt-5G-qAv"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="603-cU-8JS" firstAttribute="centerY" secondItem="q5p-vJ-Aup" secondAttribute="centerY" id="EBq-et-n2T"/>
+                                                <constraint firstAttribute="trailing" secondItem="cSe-Ux-5Yl" secondAttribute="trailing" constant="8" id="MA9-77-I1Z"/>
+                                                <constraint firstItem="cSe-Ux-5Yl" firstAttribute="centerY" secondItem="q5p-vJ-Aup" secondAttribute="centerY" id="WHf-FZ-xRt"/>
+                                                <constraint firstItem="603-cU-8JS" firstAttribute="leading" secondItem="q5p-vJ-Aup" secondAttribute="leading" constant="8" id="vxq-kJ-n7F"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="AQB-T9-0P0" id="SE9-KR-pKa"/>
@@ -295,6 +331,8 @@
                     <connections>
                         <outlet property="cityLabel" destination="vmy-BZ-sg1" id="xXx-Ji-Eup"/>
                         <outlet property="emailLabel" destination="Q2f-oN-JxY" id="7vb-kS-diy"/>
+                        <outlet property="markAsFavoriteButton" destination="603-cU-8JS" id="biA-wX-u4B"/>
+                        <outlet property="markAsUnfavoriteButton" destination="cSe-Ux-5Yl" id="q6g-ZY-7Zu"/>
                         <outlet property="nameLabel" destination="Bv8-Nk-coA" id="WIs-uH-raH"/>
                         <outlet property="phoneNumberLabel" destination="YPd-Aj-NG5" id="fkZ-tH-WX6"/>
                         <outlet property="profileView" destination="qET-c9-bbJ" id="63X-xN-hC1"/>
@@ -308,9 +346,6 @@
             <point key="canvasLocation" x="708" y="127.28635682158921"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Star" width="257" height="245"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
