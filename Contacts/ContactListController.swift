@@ -73,6 +73,8 @@ extension Contact: Equatable {
 }
 
 extension ContactListController: ContactDetailControllerDelegate {
+   
+    
     func didMarkAsFavoriteContact(_ contact: Contact) {
         guard let indexPath = dataSource.indexPath(for: contact) else {
             return
@@ -97,6 +99,7 @@ extension ContactListController: ContactDetailControllerDelegate {
         dataSource.updateContact(favoriteContact, at: indexPath)
         tableView.reloadData()
         }
+    
     }
 
 

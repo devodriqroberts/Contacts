@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -58,9 +58,11 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qXi-nN-imV">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="1zv-QN-thX"/>
+                                                <constraint firstAttribute="width" constant="80" id="Lrm-17-Wst"/>
+                                                <constraint firstAttribute="height" constant="80" id="oB9-rm-wAP"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joe Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZ3-xm-qUd">
@@ -301,7 +303,7 @@
                                                         <action selector="markAsFavorite:" destination="AQB-T9-0P0" eventType="touchUpInside" id="RYS-YV-Ot4"/>
                                                     </connections>
                                                 </button>
-                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSe-Ux-5Yl">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSe-Ux-5Yl">
                                                     <rect key="frame" x="296" y="6" width="71" height="30"/>
                                                     <state key="normal" title="Unfavorite">
                                                         <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -314,8 +316,8 @@
                                             <constraints>
                                                 <constraint firstItem="603-cU-8JS" firstAttribute="centerY" secondItem="q5p-vJ-Aup" secondAttribute="centerY" id="EBq-et-n2T"/>
                                                 <constraint firstAttribute="trailing" secondItem="cSe-Ux-5Yl" secondAttribute="trailing" constant="8" id="MA9-77-I1Z"/>
+                                                <constraint firstItem="603-cU-8JS" firstAttribute="leading" secondItem="q5p-vJ-Aup" secondAttribute="leading" constant="8" id="UWM-jq-zDh"/>
                                                 <constraint firstItem="cSe-Ux-5Yl" firstAttribute="centerY" secondItem="q5p-vJ-Aup" secondAttribute="centerY" id="WHf-FZ-xRt"/>
-                                                <constraint firstItem="603-cU-8JS" firstAttribute="leading" secondItem="q5p-vJ-Aup" secondAttribute="leading" constant="8" id="vxq-kJ-n7F"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -347,6 +349,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
+        <segue reference="Tll-UG-LXB"/>
     </inferredMetricsTieBreakers>
 </document>

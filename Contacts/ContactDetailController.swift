@@ -33,6 +33,7 @@ class ContactDetailController: UITableViewController {
     weak var delegate: ContactDetailControllerDelegate?
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -55,22 +56,31 @@ class ContactDetailController: UITableViewController {
         cityLabel.text = contact.city
         stateLabel.text = contact.state
         zipCodeLabel.text = contact.zip
+        isFavUpdate()
     }
     @IBAction func markAsFavorite(_ sender: Any) {
             guard let contact = contact else {return}
             delegate?.didMarkAsFavoriteContact(contact)
         markAsFavoriteButton.isHidden = true
         markAsUnfavoriteButton.isHidden = false
-            }
+    }
     
     @IBAction func unfavoriteContact(_ sender: Any) {
         guard let contact = contact else {return}
         delegate?.didUnfavoriteContact(contact)
         markAsUnfavoriteButton.isHidden = true
         markAsFavoriteButton.isHidden = false
-        
-        
-
+    }
+    
+    func isFavUpdate() {
+        guard let contact = contact else {return}
+        if !contact.isFavorite {
+            markAsUnfavoriteButton.isHidden = true
+            markAsFavoriteButton.isHidden = false
+        } else {
+            markAsUnfavoriteButton.isHidden = false
+            markAsFavoriteButton.isHidden = true
+        }
     }
     
 }
